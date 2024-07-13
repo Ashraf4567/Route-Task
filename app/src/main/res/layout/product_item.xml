@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
                 />
             <ImageView
                 android:id="@+id/add_wishList"
@@ -39,8 +40,9 @@
                 android:src="@drawable/ic_add_to_wishlist"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:paddingTop="8dp"
-                android:paddingEnd="10dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="5dp"
+                android:elevation="20dp"
                 />
 
 
@@ -82,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:text="EGP "
                     android:textColor="@color/text_color"
-                    android:textSize="15sp"
+                    android:textSize="10sp"
                     android:paddingStart="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/reviewTv" />
