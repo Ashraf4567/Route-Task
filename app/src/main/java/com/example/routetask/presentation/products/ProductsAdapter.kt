@@ -8,9 +8,10 @@ import com.example.routetask.domain.model.Product
 
 class ProductsAdapter(var productsList: List<Product?>?): RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
-    class ViewHolder(val item: ProductItemBinding): RecyclerView.ViewHolder(item.root){
+    class ViewHolder(private val item: ProductItemBinding): RecyclerView.ViewHolder(item.root){
         fun bind(product: Product?){
             item.product = product
+            item.originalPrice.paintFlags = item.originalPrice.paintFlags or android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
             item.executePendingBindings()
         }
     }

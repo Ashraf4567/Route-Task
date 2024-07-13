@@ -23,7 +23,12 @@ data class Product(
 	val sku: String? = null,
 	val brand: String? = null,
 	val dimensions: Dimensions? = null
-)
+){
+	fun getOriginalPrice(discountPercentage: Double , priceAfterDiscount: Double): Double{
+		val originalPrice = priceAfterDiscount - (priceAfterDiscount * discountPercentage / 100)
+		return String.format("%.1f", originalPrice).toDouble()
+	}
+}
 
 data class Dimensions(
 	val depth: Double? = null,
