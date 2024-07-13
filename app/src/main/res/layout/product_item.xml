@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="product"
+            type="com.example.routetask.domain.model.Product" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:elevation="0dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="181dp"
+            android:layout_height="257dp"
+            android:background="@drawable/border"
+            >
+            <ImageView
+                android:id="@+id/productImage"
+                url="@{product.thumbnail}"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="14"
+                android:text="@{product.title}"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                app:layout_constraintBottom_toTopOf="@id/reviewTv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productImage"
+                tools:text="Nike Air Jordon jfyftj ifuuytdj ufrdrduy" />
+
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="wrap_content"
+                android:maxLength="25"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="@{product.description}"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/reviewTv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productTitle"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/reviewTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="review: "
+                android:paddingStart="10dp"
+                android:textColor="@color/text_color"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productDescription" />
+
+            <TextView
+                android:id="@+id/ratting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`(`+product.rating.toString()+`)`}"
+                android:textColor="@color/text_color"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@id/reviewTv"
+                app:layout_constraintTop_toBottomOf="@id/productDescription"
+                tools:text="4.8" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@id/ratting"
+                app:layout_constraintStart_toEndOf="@id/ratting"
+                app:layout_constraintTop_toTopOf="@id/ratting" />
+
+            <TextView
+                android:id="@+id/egpTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EGP "
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviewTv" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{product.price.toString()}"
+                android:textColor="@color/text_color"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/egpTv"
+                app:layout_constraintTop_toBottomOf="@id/reviewTv"
+                tools:text="1,000" />
+
+            <ImageView
+                android:id="@+id/add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_product"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/add_wishList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_to_wishlist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingTop="8dp"
+                android:paddingEnd="10dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
